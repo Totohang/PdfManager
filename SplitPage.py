@@ -4,11 +4,9 @@ from PyPDF2 import PdfFileWriter
 import os
 
 def SplitPage(path, start, end, outputname):
-    #create file object for target pdf
-    f = open(path, "rb")
 
     #create PdfFileReader object from file object
-    pdf = PdfFileReader(f)
+    pdf = PdfFileReader(path)
 
     #create a pdfwriter object
     pdfwriter = PdfFileWriter()
@@ -23,8 +21,6 @@ def SplitPage(path, start, end, outputname):
     with open("{}.pdf".format(outputname), "wb") as out:
         pdfwriter.write(out)
 
-    # close pdffilereader object
-    f.close()
 
 if __name__ == "__main__":
     start = int(input("start page number:"))
