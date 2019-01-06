@@ -3,7 +3,7 @@ from PyPDF2 import PdfFileReader
 from PyPDF2 import PdfFileWriter
 import os
 
-def SplitPage(path, start, end):
+def SplitPage(path, start, end, outputname):
     #create file object for target pdf
     f = open(path, "rb")
 
@@ -20,7 +20,7 @@ def SplitPage(path, start, end):
 
 
     #open a new file and write pdf to it
-    with open("Ch54.pdf", "wb") as out:
+    with open("{}.pdf".format(outputname), "wb") as out:
         pdfwriter.write(out)
 
     # close pdffilereader object
@@ -29,5 +29,6 @@ def SplitPage(path, start, end):
 if __name__ == "__main__":
     start = int(input("start page number:"))
     end = int(input("end page number:"))
-    path = "C:\\Users\\B85M-ADATA480G\\Desktop\\pdf editing software\\Fitz.pdf"
+    outputname = input("outputname:")
+    path = "tarted path"
     SplitPage(path, start, end)
