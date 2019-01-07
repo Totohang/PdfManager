@@ -1,4 +1,4 @@
-#import PyPDF2 for processing
+#import PyPDF2 and os
 from PyPDF2 import PdfFileReader
 from PyPDF2 import PdfFileWriter
 import os
@@ -26,5 +26,7 @@ if __name__ == "__main__":
     start = int(input("start page number:"))
     end = int(input("end page number:"))
     outputname = input("outputname:")
-    path = "tarted path"
+
+    #specify target path here
+    path = "target path"
     SplitPage(path, start, end)
