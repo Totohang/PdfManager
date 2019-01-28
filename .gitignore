@@ -1,0 +1,5 @@
+*.pdf
+test.txt
+PdfManagerGUI.py
+.idea
+.__pycache__
